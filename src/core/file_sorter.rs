@@ -34,13 +34,19 @@ impl FileSorter {
             }
 
             let dir_path = std::path::Path::new(first_letter.as_str());
-            self.copy_to_dir(path, dir_path);
+            match self.move_to_dir(path, dir_path) {
+                Ok(_) => {
+                    println!("Moved {}", file)
+                },
+                Err(why) => println!("Could not move {}: {}", file, why),
+            }
         }
     }
 
-    fn copy_to_dir(&self, from: &std::path::Path, to: &std::path::Path) {
+    fn move_to_dir(&self, from: &std::path::Path, to: &std::path::Path) -> Result<(), std::io::Error> {
         let file_in_dir = to.join(from);
-        fs::rename(from, file_in_dir).unwrap();
+        // This is used to move directories
+        fs::rename(from, file_in_dir)
     }
 
     pub fn sort(&self) {
