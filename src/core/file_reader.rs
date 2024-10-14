@@ -22,5 +22,5 @@ pub fn read_files_in_current_dir() -> Vec<String>{
         }
     }
 
-    return files;
+    files
 }
