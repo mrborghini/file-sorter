@@ -34,12 +34,13 @@ impl FileSorter {
             }
 
             let dir_path = std::path::Path::new(first_letter.as_str());
-            self.copy_to_dir(path, dir_path);
+            self.move_to_dir(path, dir_path);
         }
     }
 
-    fn copy_to_dir(&self, from: &std::path::Path, to: &std::path::Path) {
+    fn move_to_dir(&self, from: &std::path::Path, to: &std::path::Path) {
         let file_in_dir = to.join(from);
+        // This is used to move directories
         fs::rename(from, file_in_dir).unwrap();
     }
 
