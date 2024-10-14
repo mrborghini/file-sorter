@@ -2,9 +2,9 @@ name: Rust Build and Release
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
   workflow_dispatch: # Allows manual triggering of the workflow
 
 env:
