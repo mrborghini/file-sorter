@@ -40,17 +40,10 @@ impl FileSorter {
 
     fn copy_to_dir(&self, from: &std::path::Path, to: &std::path::Path) {
         let file_in_dir = to.join(from);
-        fs::copy(from, file_in_dir).unwrap();
-    }
-
-    fn cleanup(&self) {
-        for file in self.files.clone() {
-            fs::remove_file(file).unwrap();
-        }
+        fs::rename(from, file_in_dir).unwrap();
     }
 
     pub fn sort(&self) {
         self.create_directories();
-        self.cleanup();
     }
 }
