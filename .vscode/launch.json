@@ -1,0 +1,45 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'file-sorter'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=file-sorter",
+                    "--package=file-sorter"
+                ],
+                "filter": {
+                    "name": "file-sorter",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'file-sorter'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=file-sorter",
+                    "--package=file-sorter"
+                ],
+                "filter": {
+                    "name": "file-sorter",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
