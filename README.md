@@ -3,14 +3,16 @@
 Basically this sorts all the files in the current directory. **It only sorts files that don't start with `.`**
 
 ### Before:
+
 ![Before](./images/before.jpg)
 
 ### After:
+
 ![After](./images/after.jpg)
 
 ## Usage
 
-cd into any directory through your terminal and run 
+cd into any directory through your terminal and run
 
 ```bash
 file-sorter
