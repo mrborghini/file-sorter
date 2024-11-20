@@ -1,6 +1,6 @@
 use std::fs;
 
-pub fn read_files_in_current_dir() -> Vec<String>{
+pub fn read_files_in_current_dir() -> Vec<String> {
     let paths = fs::read_dir("./").unwrap();
 
     let mut files: Vec<String> = Vec::new();
